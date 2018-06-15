@@ -22,6 +22,7 @@ module VagrantPlugins
                 begin
                   Process.kill 'TERM', pid
                 rescue Errno::ESRCH
+                rescue Errno::EPERM
                 end
               end
               pidfile.delete
